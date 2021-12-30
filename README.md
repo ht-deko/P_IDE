@@ -75,7 +75,9 @@ MICRO.EXE がインストールされていないか、パスに含まれてい�
 
 ### ・Get
 `CURL.EXE` (Windows 10 以降は標準で付属) を呼び出す。
+
 ![image](https://user-images.githubusercontent.com/14885863/147763748-d2591288-ec36-4f2a-89e8-476fd4f29fa6.png)
+
 ファイルはカレントディレクトリ (Active Directory) に保存される。
 
 ### ・Type
