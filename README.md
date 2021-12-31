@@ -22,11 +22,13 @@ P-CODE コンパイラ/インタプリタが `binaries\P6` フォルダに格納
 
 ## 使い方
 
-`P5.EXE` か `P6.EXE` を実行してください。IDE は Turbo Pascal 3.x みたいな感じです。Turbo Pascal 3.x が解らない方はこちらをどうぞ。
-
- - [Turbo Pascal 3.0.x の使い方 (Qiita)](https://qiita.com/ht_deko/items/ec212f5cc17cbe5f718b)
+`P5.EXE` か `P6.EXE` を実行してください。IDE は Turbo Pascal 3.x みたいな感じです。
 
 ![image](https://user-images.githubusercontent.com/14885863/147762644-60a2fffa-392f-483c-b9fc-ace7fc2ae6c9.png)
+
+Turbo Pascal 3.x を知らない方はこちらをどうぞ。
+
+ - [Turbo Pascal 3.0.x の使い方 (Qiita)](https://qiita.com/ht_deko/items/ec212f5cc17cbe5f718b)
 
 ### ・Logged drive:
 カレントドライブ。
@@ -82,7 +84,7 @@ MICRO.EXE がインストールされていないか、パスに含まれてい�
 
 ### ・Type
 ファイルの内容を表示する。
-`MICRO.EXE` がインストールされていない場合、ファイルの内容はこれで確認を行う。
+外部エディタがインストールされていない場合のファイル内容確認はこれを用いる。
 
 ### ・Quit:
 Pascal IDE を終了する。
@@ -97,11 +99,6 @@ Pascal IDE を終了する。
 
 リポジトリに含まれている `CRT32.PAS` は、[Delphi Zone](http://www.delphi-zone.com/2010/09/how-to-use-a-crt-unit-for-delphi/) にあったものを [Warren Postma 氏が Unicode 版 Delphi 向けに改変したもの](https://onedrive.live.com/embed?cid=F5BB35AE00415BC7&resid=F5BB35AE00415BC7%21232&authkey=AIKZAtMjhUyE-TQ)を改変したユニットです。
 
-## 標準 Pascal の学習
+### ライセンス
 
-『Pascal - User Manual and Report』は pascal.hansotten.com で PDF が公開されています。
-
- - [[PDF] PASCAL - User Manual and Report (pascal.hansotten.com)](http://pascal.hansotten.com/uploads/books/Pascal_User_Manual_and_Report_Second_Edition.pdf) - 第 2 版
- - [[PDF] PASCAL - User Manual and Report (pascal.hansotten.com)](http://pascal.hansotten.com/uploads/books/Pascal_User_Manual_and_Report_Fourth_Edition.pdf) - 第 4 版
-
-邦訳は培風館から出版されています。
+ライセンスは設定していません。コードスニペット扱いとしますので、自由に改変してお使いください。
