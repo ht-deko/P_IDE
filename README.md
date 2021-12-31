@@ -22,13 +22,9 @@ P-CODE コンパイラ/インタプリタが `binaries\P6` フォルダに格納
 
 ## 使い方
 
-`P5.EXE` か `P6.EXE` を実行してください。IDE は Turbo Pascal 3.x みたいな感じです。
+`P5.EXE` か `P6.EXE` を実行してください。IDE は Turbo Pascal 3.x ライクな操作となっています。
 
 ![image](https://user-images.githubusercontent.com/14885863/147762644-60a2fffa-392f-483c-b9fc-ace7fc2ae6c9.png)
-
-Turbo Pascal 3.x を知らない方はこちらをどうぞ。
-
- - [Turbo Pascal 3.0.x の使い方 (Qiita)](https://qiita.com/ht_deko/items/ec212f5cc17cbe5f718b)
 
 ### ・Logged drive:
 カレントドライブ。
