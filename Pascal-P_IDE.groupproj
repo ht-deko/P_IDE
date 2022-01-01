@@ -3,7 +3,10 @@
         <ProjectGuid>{ED4F2374-B781-4459-AACC-6C68E4D2525F}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="source\p5.dproj">
+        <Projects Include="source\P4.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="source\P5.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="source\P6.dproj">
@@ -17,14 +20,23 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="p5">
-        <MSBuild Projects="source\p5.dproj"/>
+    <Target Name="P4">
+        <MSBuild Projects="source\P4.dproj"/>
     </Target>
-    <Target Name="p5:Clean">
-        <MSBuild Projects="source\p5.dproj" Targets="Clean"/>
+    <Target Name="P4:Clean">
+        <MSBuild Projects="source\P4.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="p5:Make">
-        <MSBuild Projects="source\p5.dproj" Targets="Make"/>
+    <Target Name="P4:Make">
+        <MSBuild Projects="source\P4.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="P5">
+        <MSBuild Projects="source\P5.dproj"/>
+    </Target>
+    <Target Name="P5:Clean">
+        <MSBuild Projects="source\P5.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="P5:Make">
+        <MSBuild Projects="source\P5.dproj" Targets="Make"/>
     </Target>
     <Target Name="P6">
         <MSBuild Projects="source\P6.dproj"/>
@@ -36,24 +48,30 @@
         <MSBuild Projects="source\P6.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="p5;P6"/>
+        <CallTarget Targets="P4;P5;P6"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="p5:Clean;P6:Clean"/>
+        <CallTarget Targets="P4:Clean;P5:Clean;P6:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="p5:Make;P6:Make"/>
+        <CallTarget Targets="P4:Make;P5:Make;P6:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='RELEASE_BUILD'">
-        <BuildGroupProject Include="source\p5.dproj">
+        <BuildGroupProject Include="source\P6.dproj">
+            <ProjectGuid>{04D4E3FC-77AB-4580-8FE0-2C83285793F9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="source\P5.dproj">
             <ProjectGuid>{BF25AF50-2C14-49A9-BEBA-E1001BE8554C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="source\P6.dproj">
-            <ProjectGuid>{04D4E3FC-77AB-4580-8FE0-2C83285793F9}</ProjectGuid>
+        <BuildGroupProject Include="source\P4.dproj">
+            <ProjectGuid>{58C5CBB2-EC8D-4180-92C6-7D90D16530B4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
