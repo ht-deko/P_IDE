@@ -3,6 +3,14 @@ Windows 用の Pascal-Px IDE です。
 
 ![image](https://user-images.githubusercontent.com/14885863/147760150-e8be5d2b-6dc8-4e96-a769-44aa2996f97e.png)
 
+## Pascal-P4
+
+**Pascal-P5** は Scott A. Moore 氏による Pascal-P4 コンパイラです。
+
+ - [PASCAL-P4 (SourceForge)](https://sourceforge.net/projects/pascalp4/)
+
+P-CODE コンパイラ/インタプリタが `binaries\P4` フォルダに格納されています。
+
 ## Pascal-P5
 
 **Pascal-P5** は Scott A. Moore 氏による ISO 標準 Pascal 水準 0 に準拠した Pascal です。
