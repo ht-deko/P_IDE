@@ -82,7 +82,7 @@ end;
 
 initialization
   IdeRec.Title1Str   := 'Pascal-P4 IDE';
-  IdeRec.Title2Str   := 'Standard Pascal Level 1';
+  IdeRec.Title2Str   := 'Standard Pascal Subset';
   IdeRec.VersionStr  := 'Version 1.00';
   IdeRec.PlatformStr := 'for Win32';
 
