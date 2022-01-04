@@ -71,7 +71,7 @@ MICRO.EXE がインストールされていないか、パスに含まれてい�
 正しくコンパイルできるとソースファイルと同じフォルダに `*.px` ファイル (x はバージョン番号) を吐く。Pascal-S の場合には出力されない。
 
 ### ・Run
-インタプリタ `PINT.EXE` を呼び出す。Pascal-S の場合 'PASCALS.EXE' を呼び出す。
+インタプリタ `PINT.EXE` を呼び出す。Pascal-S の場合 `PASCALS.EXE` を呼び出す。
 
 ![image](https://user-images.githubusercontent.com/14885863/147763815-bc186ea5-5a68-4100-bb29-8307c5ee4bd2.png)
 
