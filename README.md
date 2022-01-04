@@ -29,11 +29,11 @@ P-CODE コンパイラ/インタプリタが `binaries\P6` フォルダに格納
 
 ## Pascal-S
 
-**Pascal-S** は Scott A. Moore 氏が改変した Pascal-S コンパイラ/インタプリタです。
+**Pascal-S** は Scott A. Moore 氏が改変した Pascal-S コンパイラ/インタプリタです。いわゆるインタプリタなので P-CODE を出力しません。
 
  - [PASCAL-S (SourceForge)](https://sourceforge.net/projects/pascal-s/)
 
-コンパイラ/インタプリタが `binaries\PS` フォルダに格納されています。いわゆるインタプリタなので P-CODE を出力しません。
+コンパイラ/インタプリタが `binaries\PS` フォルダに格納されています。
 
 
 ## 使い方
