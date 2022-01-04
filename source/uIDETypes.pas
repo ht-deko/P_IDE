@@ -50,10 +50,10 @@ type
     Title2Str: String;
     VersionStr: String;
     PlatformStr: String;
+    DefaultExt: String;
   end;
 
 implementation
-
 
 { TCRT }
 

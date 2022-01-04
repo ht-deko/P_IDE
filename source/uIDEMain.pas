@@ -181,7 +181,7 @@ begin
   if Trim(s) = '' then
     Exit;
   if TPath.GetExtension(s) = '' then
-    s := s + '.pas';
+    s := s + IdeRec.DefaultExt;
   IdeRec.WorkFile := s;
   if TPath.GetDirectoryName(IdeRec.WorkFile) = '' then
     IdeRec.WorkFile := CombinedPath(IdeRec.FullPath, IdeRec.WorkFile)

@@ -3,6 +3,8 @@
 { ---------------------------------------------------------------------------- }
 unit uPS;
 
+{$define UseModVersion}
+
 interface
 
 uses
@@ -28,6 +30,18 @@ begin
       if IdeRec.WorkFile = '' then
         Exit;
     end;
+{$ifdef UseModVersion}
+  if not TFile.Exists(IdeRec.WorkFile) then
+    begin
+      LineBreak;
+      WriteAndErase('File not found.', True);
+      Exit;
+    end;
+  CRT.ClearScreen;
+  CRT.EndHighlighting;
+//Exec('CMD.EXE /C pascals_mod.exe ' + IdeRec.WorkFile, IdeRec.ExePath);
+  Exec('CMD.EXE /C pascals_mod.exe ' + IdeRec.WorkFile + ' | MORE', IdeRec.ExePath);
+{$else}
   var pasfile := IdeRec.WorkFile;
   var srcFile := CombinedPath(IdeRec.ExePath, 'srcfil');
   if not TFile.Exists(pasfile) then
@@ -43,6 +57,7 @@ begin
 //Exec('CMD.EXE /C pascals.exe', IdeRec.ExePath);
   Exec('CMD.EXE /C pascals.exe | MORE', IdeRec.ExePath);
   DeleteFile(srcFile);
+{$endif}
 end;
 
 initialization

@@ -154,6 +154,7 @@ end;
 
 initialization
   CRT.Init(DEFAULT_FORE_COLOR, DEFAULT_BACK_COLOR);
+  IdeRec.DefaultExt := '.pas';
 
 finalization
   CRT.ResetColor;
