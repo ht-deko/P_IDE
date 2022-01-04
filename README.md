@@ -33,10 +33,12 @@ P-CODE コンパイラ/インタプリタが `binaries\P6` フォルダに格納
 
  - [PASCAL-S (SourceForge)](https://sourceforge.net/projects/pascal-s/)
 
+コンパイラ/インタプリタが `binaries\PS` フォルダに格納されています。いわゆるインタプリタなので P-CODE を出力しません。
+
 
 ## 使い方
 
-`Px.EXE` を実行してください。IDE は Turbo Pascal 3.x ライクな操作となっています。
+`P4.EXE` / `P5.EXE` / `P6.EXE` / `PS.EXE` を実行してください。IDE は Turbo Pascal 3.x ライクな操作となっています。
 
 ![image](https://user-images.githubusercontent.com/14885863/147762644-60a2fffa-392f-483c-b9fc-ace7fc2ae6c9.png)
 
@@ -66,14 +68,14 @@ MICRO.EXE がインストールされていないか、パスに含まれてい�
 
 ![image](https://user-images.githubusercontent.com/14885863/147763836-2b085528-4d5b-477d-a872-b5a1224da2e6.png)
 
-正しくコンパイルできるとソースファイルと同じフォルダに `*.px` ファイルを吐く。Pascal-S の場合には出力されない。
+正しくコンパイルできるとソースファイルと同じフォルダに `*.px` ファイル (x はバージョン番号) を吐く。Pascal-S の場合には出力されない。
 
 ### ・Run
 インタプリタ `PINT.EXE` を呼び出す。Pascal-S の場合 'PASCALS.EXE' を呼び出す。
 
 ![image](https://user-images.githubusercontent.com/14885863/147763815-bc186ea5-5a68-4100-bb29-8307c5ee4bd2.png)
 
-`*.px` ファイルを解釈して実行する。Pascal-S の場合にはソースファイルを直接解釈して実行する。
+`*.px` ファイル (x はバージョン番号) を解釈して実行する。Pascal-S の場合にはソースファイルを直接解釈して実行する。
 
 ### ・Dir:
 `CMD.EXE` の `DIR | MORE` をカレントディレクトリ (Active Directory) で実行する。
