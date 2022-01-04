@@ -5,7 +5,7 @@ Windows 用の Pascal-Px IDE です。
 
 ## Pascal-P4
 
-**Pascal-P5** は Scott A. Moore 氏による Pascal-P4 コンパイラです。
+**Pascal-P4** は Scott A. Moore 氏が改変した Pascal-P4 コンパイラです。
 
  - [PASCAL-P4 (SourceForge)](https://sourceforge.net/projects/pascalp4/)
 
@@ -27,10 +27,16 @@ P-CODE コンパイラ/インタプリタが `binaries\P5` フォルダに格納
 
 P-CODE コンパイラ/インタプリタが `binaries\P6` フォルダに格納されています。
 
+## Pascal-S
+
+**Pascal-S** は Scott A. Moore 氏が改変した Pascal-S コンパイラ/インタプリタです。
+
+ - [PASCAL-S (SourceForge)](https://sourceforge.net/projects/pascal-s/)
+
 
 ## 使い方
 
-`P5.EXE` か `P6.EXE` を実行してください。IDE は Turbo Pascal 3.x ライクな操作となっています。
+`Px.EXE` を実行してください。IDE は Turbo Pascal 3.x ライクな操作となっています。
 
 ![image](https://user-images.githubusercontent.com/14885863/147762644-60a2fffa-392f-483c-b9fc-ace7fc2ae6c9.png)
 
