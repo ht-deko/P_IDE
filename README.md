@@ -33,12 +33,19 @@ P-CODE コンパイラ/インタプリタが `binaries\P6` フォルダに格納
 
  - [PASCAL-S (SourceForge)](https://sourceforge.net/projects/pascal-s/)
 
-コンパイラ/インタプリタが `binaries\PS` フォルダに格納されています。
+コンパイラ/インタプリタが `binaries\PS` フォルダに格納されています。Delphi でコンパイルできるソースコード `PascalS_mod.dpr` が `source` フォルダにあります。
 
+## PL/0
+
+**PL/0** は Pascal サブセットのコンパイラ/インタプリタです。
+
+ - [PL/0 (pascal.hansotten.com)](http://pascal.hansotten.com/niklaus-wirth/pl0/)
+
+コンパイラ/インタプリタが `binaries\PL0` フォルダに格納されています。Delphi でコンパイルできるソースコード `pl0_mod.dpr` が `source` フォルダにあります。
 
 ## 使い方
 
-`P4.EXE` / `P5.EXE` / `P6.EXE` / `PS.EXE` を実行してください。IDE は Turbo Pascal 3.x ライクな操作となっています。
+`P4.EXE` / `P5.EXE` / `P6.EXE` / `PS.EXE` / `PL0.EXE` を実行してください。IDE は Turbo Pascal 3.x ライクな操作となっています。
 
 ![image](https://user-images.githubusercontent.com/14885863/147762644-60a2fffa-392f-483c-b9fc-ace7fc2ae6c9.png)
 
@@ -52,7 +59,7 @@ P-CODE コンパイラ/インタプリタが `binaries\P6` フォルダに格納
 
 ### ・Work file:
 編集/コンパイル対象のファイル。
-ファイル名だけを指定するとカレントディレクトリのファイルとみなす。拡張子を指定しなかった場合には `*.pas` であるとみなす。
+ファイル名だけを指定するとカレントディレクトリのファイルとみなす。拡張子を指定しなかった場合には `*.pas` であるとみなす (PL/0 の場合には `*.pl0`)。
 
 ### ・Edit
 外部エディタを起動する。デフォルトで **Micro Editor** (MICRO.EXE) を使う。
@@ -68,14 +75,14 @@ MICRO.EXE がインストールされていないか、パスに含まれてい�
 
 ![image](https://user-images.githubusercontent.com/14885863/147763836-2b085528-4d5b-477d-a872-b5a1224da2e6.png)
 
-正しくコンパイルできるとソースファイルと同じフォルダに `*.px` ファイル (x はバージョン番号) を吐く。Pascal-S の場合には出力されない。
+正しくコンパイルできるとソースファイルと同じフォルダに `*.px` ファイル (x はバージョン番号) を吐く。Pascal-S / PL/0 の場合には出力されない。
 
 ### ・Run
 インタプリタ `PINT.EXE` を呼び出す。Pascal-S の場合 `PASCALS.EXE` を呼び出す。
 
 ![image](https://user-images.githubusercontent.com/14885863/147763815-bc186ea5-5a68-4100-bb29-8307c5ee4bd2.png)
 
-`*.px` ファイル (x はバージョン番号) を解釈して実行する。Pascal-S の場合にはソースファイルを直接解釈して実行する。
+`*.px` ファイル (x はバージョン番号) を解釈して実行する。Pascal-S  / PL/0 の場合にはソースファイルを直接解釈して実行する。
 
 ### ・Dir:
 `CMD.EXE` の `DIR | MORE` をカレントディレクトリ (Active Directory) で実行する。
