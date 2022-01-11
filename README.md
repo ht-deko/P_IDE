@@ -71,18 +71,18 @@ P-CODE コンパイラ/インタプリタが `binaries\P6` フォルダに格納
 MICRO.EXE がインストールされていないか、パスに含まれていない場合、IDE は `COPY CON` でファイルを新規作成する。終了は〔Ctrl〕+〔Z〕。
 
 ### ・Compile
-コンパイラ `PCOM.EXE` を呼び出す。Pascal-S の場合、`Compile` と `Run` は同じ動作になる。
+コンパイラ `PCOM.EXE` を呼び出す。Pascal-S / PL/0 の場合、`Compile` と `Run` は同じ動作になる。
 
 ![image](https://user-images.githubusercontent.com/14885863/147763836-2b085528-4d5b-477d-a872-b5a1224da2e6.png)
 
 正しくコンパイルできるとソースファイルと同じフォルダに `*.px` ファイル (x はバージョン番号) を吐く。Pascal-S / PL/0 の場合には出力されない。
 
 ### ・Run
-インタプリタ `PINT.EXE` を呼び出す。Pascal-S の場合 `PASCALS.EXE` を呼び出す。
+インタプリタ `PINT.EXE` を呼び出す。Pascal-S の場合 `PASCALS_mod.EXE` を呼び出す。PL/0 の場合、`PL0_mod.exe` を呼び出す。
 
 ![image](https://user-images.githubusercontent.com/14885863/147763815-bc186ea5-5a68-4100-bb29-8307c5ee4bd2.png)
 
-`*.px` ファイル (x はバージョン番号) を解釈して実行する。Pascal-S  / PL/0 の場合にはソースファイルを直接解釈して実行する。
+`*.px` ファイル (x はバージョン番号) を解釈して実行する。Pascal-S / PL/0 の場合にはソースファイルを直接解釈して実行する。
 
 ### ・Dir:
 `CMD.EXE` の `DIR | MORE` をカレントディレクトリ (Active Directory) で実行する。
