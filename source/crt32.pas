@@ -15,7 +15,7 @@ unit Crt32;
 
 interface
 
-{$IFDEF Win32}
+{$IFDEF MSWINDOWS}
 
 const
   { CRT modes of original CRT unit }
@@ -115,11 +115,11 @@ var
   function WriteText(s: string; LineBreak: Boolean = False): UInt32;
   function WriteLineText(s: string = ''): UInt32;
 
-{$ENDIF Win32}
+{$ENDIF MSWINDOWS}
 
 implementation
 
-{$IFDEF Win32}
+{$IFDEF MSWINDOWS}
 
 uses
   AnsiStrings, Windows, SysUtils;
@@ -271,7 +271,7 @@ end;
 {$IFDEF CRT_EVENT}
 function ConsoleEventProc(CtrlType: DWORD): Bool; stdcall; far;
 var
-  S: {$IFDEF Win32}ShortString{$ELSE}String{$ENDIF};
+  S: {$IFDEF MSWINDOWS}ShortString{$ELSE}String{$ENDIF};
   Message: PAnsiChar;
 begin
   case CtrlType of
@@ -666,20 +666,22 @@ begin
 end;
 
 procedure NoSound;
-begin
-  if IsWinNT then
+  procedure _NoSound;
   begin
-    Windows.Beep(SoundFrequency, 0);
-  end
-  else
-  begin
+    {$IFDEF Win32}
     asm
       { Set Sound On }
       in   Al,$61
       and  Al,$FC
       out  $61,Al
     end;
+    {$ENDIF}
   end;
+begin
+  if IsWinNT then
+    Windows.Beep(SoundFrequency, 0)
+  else
+    _NoSound;
 end;
 
 function ReadKey: AnsiChar;
@@ -696,15 +698,9 @@ begin
 end;
 
 procedure Sound(Hz: Word);
-begin
-  { SetSoundIOPermissionMap(LocalIOPermission_ON); }
-  SoundFrequency := Hz;
-  if IsWinNT then
+  procedure _Sound(Hz: Word);
   begin
-    Windows.Beep(SoundFrequency, SoundDuration)
-  end
-  else
-  begin
+    {$IFDEF Win32}
     asm
       mov  BX,Hz
       cmp  BX,0
@@ -732,7 +728,15 @@ begin
       out  $42,Al
     @2:
     end;
+    {$ENDIF}
   end;
+begin
+  { SetSoundIOPermissionMap(LocalIOPermission_ON); }
+  SoundFrequency := Hz;
+  if IsWinNT then
+    Windows.Beep(SoundFrequency, SoundDuration)
+  else
+    _Sound(Hz);
 end;
 
 procedure TextBackground(Color: Byte);
@@ -968,6 +972,6 @@ Init;
 finalization
 
 Done;
-{$ENDIF win32}
+{$ENDIF MSWINDOWS}
 
 end.
