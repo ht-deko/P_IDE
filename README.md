@@ -56,7 +56,7 @@ P-CODE コンパイラ/インタプリタが `binaries\P6` フォルダに格納
 
 `P4.EXE` / `P5.EXE` / `P6.EXE` / `PS.EXE` / `PL0.EXE` / `DP.EXE` を実行してください。IDE は Turbo Pascal 3.x ライクな操作となっています。
 
-![image](https://user-images.githubusercontent.com/14885863/147762644-60a2fffa-392f-483c-b9fc-ace7fc2ae6c9.png)
+![image](https://user-images.githubusercontent.com/14885863/150693254-14b80af5-eeb3-46ec-a81c-f465f678a2cf.png)
 
 ### ・Logged drive:
 カレントドライブ。
@@ -93,8 +93,9 @@ MICRO.EXE がインストールされていないか、パスに含まれてい�
 
 `*.px` ファイル (x はバージョン番号) を解釈して実行する。Pascal-S / PL/0 の場合にはソースファイルを直接解釈して実行する。
 
-### ・Dir:
-`CMD.EXE` の `DIR | MORE` をカレントディレクトリ (Active Directory) で実行する。
+### ・More:
+コンパイラ等の外部コマンドを呼び出し時の `MORE` コマンド使用を切り替える。
+
 `MORE` の操作は次の通り。
 
 | キー | 説明 |
@@ -102,6 +103,9 @@ MICRO.EXE がインストールされていないか、パスに含まれてい�
 | 〔Enter〕| 次の行を表示します。 |
 | 〔Space〕| 次ページを表示します。 |
 | 〔Q〕| 終了します。 |
+
+### ・Dir
+`CMD.EXE` の `DIR | MORE` をカレントディレクトリ (Active Directory) で実行する。
 
 ### ・Get
 `CURL.EXE` (Windows 10 以降は標準で付属) を呼び出す。
