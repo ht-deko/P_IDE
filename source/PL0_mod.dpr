@@ -1,4 +1,4 @@
-program PL0_mod(input, output);
+program pl0(input, output);
 { pl/0 compiler with code generation }
 {$APPTYPE CONSOLE}
 {$WEAKLINKRTTI ON}

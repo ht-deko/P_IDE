@@ -24,6 +24,9 @@
         <Projects Include="source\PL0_mod.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="source\DP.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -95,31 +98,78 @@
     <Target Name="PL0_mod:Make">
         <MSBuild Projects="source\PL0_mod.dproj" Targets="Make"/>
     </Target>
+    <Target Name="DP">
+        <MSBuild Projects="source\DP.dproj"/>
+    </Target>
+    <Target Name="DP:Clean">
+        <MSBuild Projects="source\DP.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DP:Make">
+        <MSBuild Projects="source\DP.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="P4;P5;P6;PS;PascalS_mod;PL0;PL0_mod"/>
+        <CallTarget Targets="P4;P5;P6;PS;PascalS_mod;PL0;PL0_mod;DP"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="P4:Clean;P5:Clean;P6:Clean;PS:Clean;PascalS_mod:Clean;PL0:Clean;PL0_mod:Clean"/>
+        <CallTarget Targets="P4:Clean;P5:Clean;P6:Clean;PS:Clean;PascalS_mod:Clean;PL0:Clean;PL0_mod:Clean;DP:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="P4:Make;P5:Make;P6:Make;PS:Make;PascalS_mod:Make;PL0:Make;PL0_mod:Make"/>
+        <CallTarget Targets="P4:Make;P5:Make;P6:Make;PS:Make;PascalS_mod:Make;PL0:Make;PL0_mod:Make;DP:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
-    <ItemGroup Condition="'$(BuildGroup)'=='RELEASE_BUILD'">
+    <ItemGroup Condition="'$(BuildGroup)'=='RELEASE_BUILD64'">
+        <BuildGroupProject Include="source\DP.dproj">
+            <ProjectGuid>{6ECF584C-7344-44F5-A733-14E78046CF1F}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="source\PL0.dproj">
+            <ProjectGuid>{73B9D182-B48A-4630-A26E-C39B3D5B40CC}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="source\PascalS_mod.dproj">
+            <ProjectGuid>{D5EEF09F-70D8-43B6-AAE8-B415AEB8110B}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="source\PS.dproj">
+            <ProjectGuid>{6ADEE572-F1D2-424F-AE28-22BE8DBD68B6}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="source\PL0_mod.dproj">
+            <ProjectGuid>{A575A9AE-E979-4C66-9C8B-B95998E491F3}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="source\P4.dproj">
             <ProjectGuid>{58C5CBB2-EC8D-4180-92C6-7D90D16530B4}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Platforms>Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="source\P5.dproj">
             <ProjectGuid>{BF25AF50-2C14-49A9-BEBA-E1001BE8554C}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Platforms>Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="source\P6.dproj">
             <ProjectGuid>{04D4E3FC-77AB-4580-8FE0-2C83285793F9}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='RELEASE_BUILD'">
+        <BuildGroupProject Include="source\DP.dproj">
+            <ProjectGuid>{6ECF584C-7344-44F5-A733-14E78046CF1F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
@@ -144,6 +194,24 @@
         </BuildGroupProject>
         <BuildGroupProject Include="source\PL0_mod.dproj">
             <ProjectGuid>{A575A9AE-E979-4C66-9C8B-B95998E491F3}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="source\P5.dproj">
+            <ProjectGuid>{BF25AF50-2C14-49A9-BEBA-E1001BE8554C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="source\P4.dproj">
+            <ProjectGuid>{58C5CBB2-EC8D-4180-92C6-7D90D16530B4}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="source\P6.dproj">
+            <ProjectGuid>{04D4E3FC-77AB-4580-8FE0-2C83285793F9}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
