@@ -59,5 +59,6 @@ initialization
   IdeRec.Title2Str   := 'Object Pascal';
   IdeRec.VersionStr  := 'Version 1.00';
   IdeRec.PlatformStr := 'for Win32';
+  IdeRec.DefaultExt  := '.dpr';
 
 end.
