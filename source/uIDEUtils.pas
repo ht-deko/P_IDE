@@ -23,6 +23,7 @@ var
   CRT: TCRT;
   IdeRec: TIdeRec;
   WorkFileProc: TProc;
+  UseMoreCmd: Boolean = True;
 
 implementation
 

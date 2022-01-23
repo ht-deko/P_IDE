@@ -18,6 +18,8 @@ const
   DEFAULT_FORE_COLOR = White;
   DEFAULT_BACK_COLOR = Black;
 
+  MORECMD_STR: array [Boolean] of string = (' ', ' | MORE');
+
 type
   TCRTColor = Black..White;
 

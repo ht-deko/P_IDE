@@ -100,6 +100,8 @@ end; { Splash }
 
 // Menu
 procedure Menu;
+const
+  USE_STR: array [Boolean] of string = ('Not use', 'Use');
 begin
   TextBackground(DEFAULT_BACK_COLOR);
   TextColor(DEFAULT_FORE_COLOR);
@@ -111,7 +113,7 @@ begin
   // Work file:
   LabeledTextXY( 1, 4, 'Work file: '       , IdeRec.WorkFile       );
   // Command
-  LabeledTextXY( 1, 6, 'Edit'   ); LabeledTextXY(10, 6, 'Compile'); LabeledTextXY(19, 6, 'Run'    );
+  LabeledTextXY( 1, 6, 'Edit'   ); LabeledTextXY(10, 6, 'Compile'); LabeledTextXY(19, 6, 'Run'    ); LabeledTextXY(28, 6, 'More: ' , USE_STR[UseMoreCmd]);
   LabeledTextXY( 1, 7, 'Dir'    ); LabeledTextXY(10, 7, 'Get'    ); LabeledTextXY(19, 7, 'Type'   ); LabeledTextXY(28, 7, 'Quit'   );
   CRT.CursorPosition(1, 9);
 end; { Menu }
@@ -220,6 +222,12 @@ begin
     end;
 end;
 
+// MORE Command
+procedure Command_M;
+begin
+  UseMoreCmd := not UseMoreCmd;
+end;
+
 // Dir
 procedure Command_D;
 begin
@@ -232,7 +240,7 @@ begin
   CRT.EraseToEOL;
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec('CMD.EXE /C DIR ' + CombinedPath(IdeRec.FullPath, FileMask) + ' | MORE');
+  Exec('CMD.EXE /C DIR ' + CombinedPath(IdeRec.FullPath, FileMask) + MORECMD_STR[UseMoreCmd]);
 end;
 
 // Get
@@ -272,7 +280,7 @@ begin
     end;
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec('CMD.EXE /C TYPE ' + IdeRec.WorkFile + ' | MORE');
+  Exec('CMD.EXE /C TYPE ' + IdeRec.WorkFile + MORECMD_STR[UseMoreCmd]);
 end;
 
 // Quit
@@ -291,7 +299,7 @@ begin
     Menu;
     while True do
       begin
-        case Prompt  of
+        case Prompt of
           'L': Command_L;
           'A': Command_A;
           'W': Command_W;
@@ -301,6 +309,10 @@ begin
                end;
           'C': Command_C;
           'R': Command_R;
+          'M': begin
+                 Command_M;
+                 Break;
+               end;
           'D': Command_D;
           'G': Command_G;
           'T': Command_T;

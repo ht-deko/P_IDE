@@ -38,8 +38,7 @@ begin
   TFile.Copy(pasfile, prdFile);
   CRT.ClearScreen;
   CRT.EndHighlighting;
-//Exec('pcom.exe', IdeRec.ExePath);
-  Exec('CMD.EXE /C pcom.exe | MORE', IdeRec.ExePath);
+  Exec('CMD.EXE /C pcom.exe' + MORECMD_STR[UseMoreCmd], IdeRec.ExePath);
   if TFile.Exists(prrFile) then
     begin
       TFile.Copy(prrFile, p5file);
@@ -67,8 +66,7 @@ begin
   TFile.Copy(p5file, prdFile);
   CRT.ClearScreen;
   CRT.EndHighlighting;
-//Exec('pint.exe', IdeRec.ExePath);
-  Exec('CMD.EXE /C pint.exe | MORE', IdeRec.ExePath);
+  Exec('CMD.EXE /C pint.exe' + MORECMD_STR[UseMoreCmd], IdeRec.ExePath);
   if TFile.Exists(prrFile) then
     begin
       if TFile.GetSize(prrFile) <> 0 then
