@@ -43,9 +43,18 @@ P-CODE コンパイラ/インタプリタが `binaries\P6` フォルダに格納
 
 コンパイラ/インタプリタが `binaries\PL0` フォルダに格納されています。Delphi でコンパイルできるソースコード `pl0_mod.dpr` が `source` フォルダにあります。
 
+## Delphi CC
+
+**Delphi CC** は Delphi のコマンドラインコンパイラです。
+
+ - [DCC32.EXE - Delphi コマンドライン コンパイラ (DocWiki)](https://docwiki.embarcadero.com/RADStudio/ja/DCC32.EXE_-_Delphi_%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3_%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9)
+
+`binaries\DP` フォルダには IDE のみ格納されています。実行には Delphi のインストールが必要です。
+
+
 ## 使い方
 
-`P4.EXE` / `P5.EXE` / `P6.EXE` / `PS.EXE` / `PL0.EXE` を実行してください。IDE は Turbo Pascal 3.x ライクな操作となっています。
+`P4.EXE` / `P5.EXE` / `P6.EXE` / `PS.EXE` / `PL0.EXE` / `DP.EXE` を実行してください。IDE は Turbo Pascal 3.x ライクな操作となっています。
 
 ![image](https://user-images.githubusercontent.com/14885863/147762644-60a2fffa-392f-483c-b9fc-ace7fc2ae6c9.png)
 
