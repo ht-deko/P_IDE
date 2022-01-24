@@ -30,8 +30,7 @@ begin
     end;
   CRT.ClearScreen;
   CRT.EndHighlighting;
-//Exec('CMD.EXE /C pl0_mod.exe ' + IdeRec.WorkFile, IdeRec.ExePath);
-  Exec('CMD.EXE /C pl0_mod.exe ' + IdeRec.WorkFile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath);
+  Exec('pl0_mod.exe ' + IdeRec.WorkFile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath, True);
 end;
 
 initialization

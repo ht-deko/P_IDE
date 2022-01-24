@@ -33,7 +33,7 @@ begin
   DeleteFile(exefile);
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec('CMD.EXE /C dcc32.exe -CC ' + pasfile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath);
+  Exec('dcc32.exe -CC ' + pasfile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath, True);
 end;
 
 // Run
@@ -49,7 +49,7 @@ begin
     end;
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec('CMD.EXE /C ' + exefile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath);
+  Exec(exefile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath, True);
 end;
 
 initialization

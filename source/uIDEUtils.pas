@@ -10,7 +10,7 @@ uses
 
 function CombinedPath(Path1, Path2: string): string;
 procedure DeleteFile(FileName: string);
-procedure Exec(Cmd: string; Path: string = '');
+procedure Exec(Cmd: string; Path: string = ''; UseCI: Boolean = False);
 procedure LabeledTextXY(x, y: Byte; aLabel: string; aData: string = '');
 procedure LineBreak;
 function NormalizedFileName(aFileName: string): string;
@@ -42,7 +42,7 @@ begin
 end;
 
 // Exec
-procedure Exec(Cmd: string; Path: string);
+procedure Exec(Cmd: string; Path: string; UseCI: Boolean);
 var
   CommandLine, CurrentPath: string;
   SI: TStartupInfo;
@@ -50,6 +50,8 @@ var
   CP: PChar;
 begin
   CommandLine := Cmd;
+  if UseCI then
+    CommandLine := 'CMD.EXE /C ' + CommandLine;
   UniqueString(CommandLine);
   if Path = '' then
     CP := nil

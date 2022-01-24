@@ -32,7 +32,7 @@ begin
     end;
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec('CMD.EXE /C pcom.exe < ' + pasfile + ' ' + p6file + MORECMD_STR[UseMoreCmd], IdeRec.ExePath);
+  Exec('pcom.exe < ' + pasfile + ' ' + p6file + MORECMD_STR[UseMoreCmd], IdeRec.ExePath, True);
 end;
 
 // Run
@@ -48,7 +48,7 @@ begin
     end;
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec('CMD.EXE /C pint.exe ' + p6file + MORECMD_STR[UseMoreCmd], IdeRec.ExePath);
+  Exec('pint.exe ' + p6file + MORECMD_STR[UseMoreCmd], IdeRec.ExePath, True);
 end;
 
 initialization

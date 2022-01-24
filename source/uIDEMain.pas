@@ -218,7 +218,7 @@ begin
   else
     begin
       CRT.ClearScreen;
-      Exec('CMD.EXE /C COPY CON ' + IdeRec.WorkFile);
+      Exec('COPY CON ' + IdeRec.WorkFile, '', True);
     end;
 end;
 
@@ -240,7 +240,7 @@ begin
   CRT.EraseToEOL;
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec('CMD.EXE /C DIR ' + CombinedPath(IdeRec.FullPath, FileMask) + MORECMD_STR[UseMoreCmd]);
+  Exec('DIR ' + CombinedPath(IdeRec.FullPath, FileMask) + MORECMD_STR[UseMoreCmd], '', True);
 end;
 
 // Get
@@ -280,7 +280,7 @@ begin
     end;
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec('CMD.EXE /C TYPE ' + IdeRec.WorkFile + MORECMD_STR[UseMoreCmd]);
+  Exec('TYPE ' + IdeRec.WorkFile + MORECMD_STR[UseMoreCmd], '', True);
 end;
 
 // Quit

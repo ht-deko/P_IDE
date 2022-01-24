@@ -39,7 +39,7 @@ begin
     end;
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec('CMD.EXE /C pascals_mod.exe ' + IdeRec.WorkFile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath);
+  Exec('pascals_mod.exe ' + IdeRec.WorkFile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath, True);
 {$else}
   var pasfile := IdeRec.WorkFile;
   var srcFile := CombinedPath(IdeRec.ExePath, 'srcfil');
@@ -53,7 +53,7 @@ begin
   TFile.Copy(pasfile, srcFile);
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec('CMD.EXE /C pascals.exe' + MORECMD_STR[UseMoreCmd], IdeRec.ExePath);
+  Exec('pascals.exe' + MORECMD_STR[UseMoreCmd], IdeRec.ExePath, True);
   DeleteFile(srcFile);
 {$endif}
 end;

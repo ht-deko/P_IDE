@@ -37,7 +37,7 @@ begin
   DeleteFile(p4file);
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec('CMD.EXE /C pcom.exe < ' + pasfile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath);
+  Exec('pcom.exe < ' + pasfile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath, True);
   if TFile.Exists(prrFile) then
     begin
       TFile.Copy(prrFile, p4file);
@@ -65,7 +65,7 @@ begin
   TFile.Copy(p4file, prdFile);
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec('CMD.EXE /C pint.exe < NUL' + MORECMD_STR[UseMoreCmd], IdeRec.ExePath);
+  Exec('pint.exe < NUL' + MORECMD_STR[UseMoreCmd], IdeRec.ExePath, True);
   if TFile.Exists(prrFile) then
     begin
       if TFile.GetSize(prrFile) <> 0 then
