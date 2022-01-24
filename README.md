@@ -105,7 +105,7 @@ MICRO.EXE がインストールされていないか、パスに含まれてい�
 | 〔Q〕| 終了します。 |
 
 ### ・Dir
-`CMD.EXE` の `DIR | MORE` をカレントディレクトリ (Active Directory) で実行する。
+`CMD.EXE` の `DIR` をカレントディレクトリ (Active Directory) で実行する。`Dir mask:` に何も入力しないと全ファイルをリストアップする。`Dir mask:` には `*.pas` のようにワイルドカードを指定可能。
 
 ### ・Get
 `CURL.EXE` (Windows 10 以降は標準で付属) を呼び出す。
