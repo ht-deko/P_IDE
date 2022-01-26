@@ -21,6 +21,7 @@ procedure Command_W; forward;
 // Intialize Program
 procedure InitPG;
 begin
+  SetConsoleOutputCP(GetACP);
   IdeRec.ExePath := TPath.GetDirectoryName(ParamStr(0));
   SetPath(GetCurrentDir);
   IdeRec.WorkFile := '';
