@@ -51,6 +51,12 @@ P-CODE コンパイラ/インタプリタが `binaries\P6` フォルダに格納
 
 `binaries\DP` フォルダには IDE のみ格納されています。実行には Delphi のインストールが必要です。
 
+`$(BDS)\BIN\DCC32.CFG` に次の一行を加えると uses 句に RTL ユニットを追加できます。
+
+```
+-NSWinapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;System;Xml;Data;Datasnap;Web;Soap;
+```
+
 
 ## 使い方
 
