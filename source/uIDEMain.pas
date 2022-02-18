@@ -107,16 +107,21 @@ begin
   TextBackground(DEFAULT_BACK_COLOR);
   TextColor(DEFAULT_FORE_COLOR);
   CRT.ClearScreen;
-  // Logged drive:
-  LabeledTextXY( 1, 1, 'Logged drive: '    , IdeRec.LoggedDrive    );
-  // Active directory:
-  LabeledTextXY( 1, 2, 'Active directory: ', IdeRec.ActiveDirectory);
-  // Work file:
-  LabeledTextXY( 1, 4, 'Work file: '       , IdeRec.WorkFile       );
-  // Command
-  LabeledTextXY( 1, 6, 'Edit'   ); LabeledTextXY(10, 6, 'Compile'); LabeledTextXY(19, 6, 'Run'    ); LabeledTextXY(28, 6, 'More: ' , USE_STR[UseMoreCmd]);
-  LabeledTextXY( 1, 7, 'Dir'    ); LabeledTextXY(10, 7, 'Get'    ); LabeledTextXY(19, 7, 'Type'   ); LabeledTextXY(28, 7, 'Quit'   );
-  CRT.CursorPosition(1, 9);
+  if HideMenu then
+    CRT.CursorPosition(1, 1)
+  else
+    begin
+      // Logged drive:
+      LabeledTextXY( 1, 1, 'Logged drive: '    , IdeRec.LoggedDrive    );
+      // Active directory:
+      LabeledTextXY( 1, 2, 'Active directory: ', IdeRec.ActiveDirectory);
+      // Work file:
+      LabeledTextXY( 1, 4, 'Work file: '       , IdeRec.WorkFile       );
+      // Command
+      LabeledTextXY( 1, 6, 'Edit'   ); LabeledTextXY(10, 6, 'Compile'); LabeledTextXY(19, 6, 'Run'    ); LabeledTextXY(28, 6, 'More: ' , USE_STR[UseMoreCmd]);
+      LabeledTextXY( 1, 7, 'Dir'    ); LabeledTextXY(10, 7, 'Get'    ); LabeledTextXY(19, 7, 'Type'   ); LabeledTextXY(28, 7, 'Quit'   );
+      CRT.CursorPosition(1, 9);
+    end;
 end; { Menu }
 
 { Functions }
@@ -290,6 +295,12 @@ begin
   Result := True;
 end;
 
+// Hide Menu
+procedure Command_H;
+begin
+  HideMenu := not HideMenu;
+end;
+
 // RunIDE
 procedure RunIDE(Command_C, Command_R: TProc);
 begin
@@ -321,6 +332,10 @@ begin
                  if Command_Q then
                    Exit;
                end;
+          'H': begin
+                 Command_H;
+                 Break;
+               end
         else
           Break;
         end;

@@ -24,6 +24,7 @@ var
   IdeRec: TIdeRec;
   WorkFileProc: TProc;
   UseMoreCmd: Boolean = False;
+  HideMenu: Boolean = False;
 
 implementation
 
