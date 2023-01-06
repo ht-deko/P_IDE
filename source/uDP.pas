@@ -16,13 +16,15 @@ implementation
 // Compile
 procedure CompileProc_DP;
 begin
-  if IdeRec.WorkFile = '' then
+  if (IdeRec.MainFile = '') and (IdeRec.WorkFile = '') then
     begin
       WorkFileProc;
       if IdeRec.WorkFile = '' then
         Exit;
     end;
   var pasfile := IdeRec.WorkFile;
+  if IdeRec.MainFile <> '' then
+    pasfile := IdeRec.MainFile;
   var exefile := TPath.ChangeExtension(pasfile, '.exe');
   if not TFile.Exists(pasfile) then
     begin
@@ -40,6 +42,8 @@ end;
 procedure RunProc_DP;
 begin
   var pasfile := IdeRec.WorkFile;
+  if IdeRec.MainFile <> '' then
+    pasfile := IdeRec.MainFile;
   var exefile := TPath.ChangeExtension(pasfile, '.exe');
   if not TFile.Exists(exefile) then
     begin
@@ -55,8 +59,9 @@ end;
 initialization
   IdeRec.Title1Str   := 'Delphi CC IDE';
   IdeRec.Title2Str   := 'Object Pascal';
-  IdeRec.VersionStr  := 'Version 1.00';
+  IdeRec.VersionStr  := 'Version 1.10';
   IdeRec.PlatformStr := 'for Win32';
   IdeRec.DefaultExt  := '.dpr';
+  IdeRec.UseMainFile := True;
 
 end.

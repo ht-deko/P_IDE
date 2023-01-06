@@ -45,6 +45,8 @@ type
     ActiveDirectory: string;
     FullPath: string;
     WorkFile: string;
+    UseMainFile: Boolean;
+    MainFile: string;
     ExePath: string;
     HasEditor: Boolean;
     HasDownloader: Boolean;

@@ -82,7 +82,7 @@ end;
 initialization
   IdeRec.Title1Str   := 'Pascal-P5 IDE';
   IdeRec.Title2Str   := 'Standard Pascal Level 0';
-  IdeRec.VersionStr  := 'Version 1.00';
+  IdeRec.VersionStr  := 'Version 1.10';
   IdeRec.PlatformStr := 'for Win32';
 
 end.

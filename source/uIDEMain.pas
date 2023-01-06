@@ -117,10 +117,13 @@ begin
       LabeledTextXY( 1, 2, 'Active directory: ', IdeRec.ActiveDirectory);
       // Work file:
       LabeledTextXY( 1, 4, 'Work file: '       , IdeRec.WorkFile       );
+      // Main file:
+      if IdeRec.UseMainFile then
+        LabeledTextXY( 1, 5, 'Main file: '       , IdeRec.MainFile       );
       // Command
-      LabeledTextXY( 1, 6, 'Edit'   ); LabeledTextXY(10, 6, 'Compile'); LabeledTextXY(19, 6, 'Run'    ); LabeledTextXY(28, 6, 'More: ' , USE_STR[UseMoreCmd]);
-      LabeledTextXY( 1, 7, 'Dir'    ); LabeledTextXY(10, 7, 'Get'    ); LabeledTextXY(19, 7, 'Type'   ); LabeledTextXY(28, 7, 'Quit'   );
-      CRT.CursorPosition(1, 9);
+      LabeledTextXY( 1, 7, 'Edit'   ); LabeledTextXY(10, 7, 'Compile'); LabeledTextXY(19, 7, 'Run'    ); WriteTextXY(28, 7, 'M', False); LabeledTextXY(29, 7, 'ore: ' , USE_STR[UseMoreCmd]);
+      LabeledTextXY( 1, 8, 'Dir'    ); LabeledTextXY(10, 8, 'Get'    ); LabeledTextXY(19, 8, 'Type'   ); LabeledTextXY(28, 8, 'Quit'   );
+      CRT.CursorPosition(1, 10);
     end;
 end; { Menu }
 
@@ -212,24 +215,66 @@ begin
     end;
 end;
 
+// Main file:
+procedure Command_M;
+var
+  s: string;
+begin
+  LineBreak;
+  WriteAndErase('Main file name: ');
+  ReadLn(s);
+  if Trim(s) = '' then
+    Exit;
+  if TPath.GetExtension(s) = '' then
+    s := s + IdeRec.DefaultExt;
+  IdeRec.MainFile := s;
+  if TPath.GetDirectoryName(IdeRec.MainFile) = '' then
+    IdeRec.MainFile := CombinedPath(IdeRec.FullPath, IdeRec.MainFile)
+  else
+    IdeRec.MainFile := s;
+   IdeRec.MainFile := NormalizedFileName(IdeRec.MainFile);
+  LineBreak;
+  Write('Loading ', IdeRec.MainFile);
+  WriteAndErase('', True);
+  CRT.EndHighlighting;
+  if TDirectory.Exists(TPath.GetDirectoryName(IdeRec.MainFile)) then
+    begin
+      if not TFile.Exists(IdeRec.MainFile) then
+        WriteAndErase('New File', True);
+    end
+  else
+    begin
+      InvalidPath;
+      IdeRec.MainFile := '';
+    end;
+end;
+
 // Edit
 procedure Command_E;
 begin
-  if IdeRec.WorkFile = '' then
-    Command_W;
-  if IdeRec.WorkFile = '' then
-    Exit;
+  var PasFile: string;
+  if IdeRec.UseMainFile then
+    PasFile := IdeRec.MainFile;
+  if PasFile = '' then
+    begin
+      if IdeRec.WorkFile = '' then
+        Command_W;
+      if IdeRec.WorkFile = '' then
+        Exit;
+    end;
+  if IdeRec.WorkFile <> '' then
+   PasFile := IdeRec.WorkFile;
   if IdeRec.HasEditor then
-    Exec(EDITOR_NAME + ' ' + IdeRec.WorkFile)
+    Exec(EDITOR_NAME + ' ' + PasFile)
   else
     begin
       CRT.ClearScreen;
-      Exec('COPY CON ' + IdeRec.WorkFile, '', True);
+      Exec('COPY CON ' + PasFile, '', True);
     end;
 end;
 
 // MORE Command
-procedure Command_M;
+procedure Command_O;
 begin
   UseMoreCmd := not UseMoreCmd;
 end;
@@ -315,14 +360,18 @@ begin
           'L': Command_L;
           'A': Command_A;
           'W': Command_W;
+          'M': if IdeRec.UseMainFile then
+                 Command_M
+               else
+                 Break;
           'E': begin
                  Command_E;
                  Break;
                end;
           'C': Command_C;
           'R': Command_R;
-          'M': begin
-                 Command_M;
+          'O': begin
+                 Command_O;
                  Break;
                end;
           'D': Command_D;
