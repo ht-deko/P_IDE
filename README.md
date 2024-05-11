@@ -19,6 +19,10 @@ P-CODE コンパイラ/インタプリタが `binaries\P4` フォルダに格納
 
 P-CODE コンパイラ/インタプリタが `binaries\P5` フォルダに格納されています。
 
+ - [PASCAL-P5 (Github)](https://github.com/ht-deko/Pascal-P5/tree/main)
+
+Delphi でコンパイルできるバージョンもあります。
+
 ## Pascal-P6
 
 **Pascal-P6** は Richard Sprague 氏による ISO 標準 Pascal 水準 1 に準拠した Pascal です。
