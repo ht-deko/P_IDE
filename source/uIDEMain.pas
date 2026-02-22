@@ -125,7 +125,7 @@ begin
       LabeledTextXY( 1, 7, 'Edit'   ); LabeledTextXY(10, 7, 'Compile'); LabeledTextXY(19, 7, 'Run'    ); WriteTextXY(28, 7, 'M', False); LabeledTextXY(29, 7, 'ore: ' , USE_STR[UseMoreCmd]);
       if IdeRec.HasDebugger then
       begin
-        WriteTextXY(47, 7, 'De', False); LabeledTextXY(49, 7, 'bug Mode: ' , DEBUG_STR[UseDebugger]);
+        WriteTextXY(43, 7, 'De', False); LabeledTextXY(45, 7, 'bug: ' , DEBUG_STR[UseDebugger]);
       end;
       LabeledTextXY( 1, 8, 'Dir'    ); LabeledTextXY(10, 8, 'Get'    ); LabeledTextXY(19, 8, 'Type'   ); LabeledTextXY(28, 8, 'Quit'   );
       CRT.CursorPosition(1, 10);
