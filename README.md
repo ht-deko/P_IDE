@@ -118,6 +118,16 @@ MICRO.EXE がインストールされていないか、パスに含まれてい�
 | 〔Space〕| 次ページを表示します。 |
 | 〔Q〕| 終了します。 |
 
+### ・Debug Mode (DP.EXE / Win32 のみ)
+**Turbo Debugger** 5.5 を使用する。 (トグル動作)
+
+<img width="642" height="484" alt="image" src="https://github.com/user-attachments/assets/9d56627c-239e-426c-84a1-c936fc27b765" />
+
+| 機能 | Debug Off | Debug On |
+|:---:|:---|:---|
+| Compile| コンパイラに `-CC` を渡します | コンパイラに `-CC -V` を渡します |
+| Run| コンパイルした EXE を実行します | コンパイルした EXE を TD32 でデバッグ実行します |
+
 ### ・Dir
 `CMD.EXE` の `DIR` をカレントディレクトリ (Active Directory) で実行する。`Dir mask:` に何も入力しないと全ファイルをリストアップする。`Dir mask:` には `*.pas` のようにワイルドカードを指定可能。
 
