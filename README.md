@@ -118,7 +118,7 @@ MICRO.EXE がインストールされていないか、パスに含まれてい�
 | 〔Space〕| 次ページを表示します。 |
 | 〔Q〕| 終了します。 |
 
-### ・Debug Mode (DP.EXE / Win32 のみ)
+### ・Debug (DP.EXE / Win32 のみ)
 **Turbo Debugger** 5.5 を使用する。 (トグル動作)
 
 <img width="642" height="484" alt="image" src="https://github.com/user-attachments/assets/9d56627c-239e-426c-84a1-c936fc27b765" />
