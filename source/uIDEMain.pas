@@ -103,6 +103,7 @@ end; { Splash }
 procedure Menu;
 const
   USE_STR: array [Boolean] of string = ('Not use', 'Use');
+  DEBUG_STR: array [Boolean] of string = ('Off', 'On');
 begin
   TextBackground(DEFAULT_BACK_COLOR);
   TextColor(DEFAULT_FORE_COLOR);
@@ -122,6 +123,10 @@ begin
         LabeledTextXY( 1, 5, 'Main file: '       , IdeRec.MainFile       );
       // Command
       LabeledTextXY( 1, 7, 'Edit'   ); LabeledTextXY(10, 7, 'Compile'); LabeledTextXY(19, 7, 'Run'    ); WriteTextXY(28, 7, 'M', False); LabeledTextXY(29, 7, 'ore: ' , USE_STR[UseMoreCmd]);
+      if IdeRec.HasDebugger then
+      begin
+        WriteTextXY(47, 7, 'De', False); LabeledTextXY(49, 7, 'bug Mode: ' , DEBUG_STR[UseDebugger]);
+      end;
       LabeledTextXY( 1, 8, 'Dir'    ); LabeledTextXY(10, 8, 'Get'    ); LabeledTextXY(19, 8, 'Type'   ); LabeledTextXY(28, 8, 'Quit'   );
       CRT.CursorPosition(1, 10);
     end;
@@ -279,6 +284,12 @@ begin
   UseMoreCmd := not UseMoreCmd;
 end;
 
+// Debug Command
+procedure Command_B;
+begin
+  UseDebugger := not UseDebugger;
+end;
+
 // Dir
 procedure Command_D;
 begin
@@ -369,9 +380,17 @@ begin
                  Break;
                end;
           'C': Command_C;
-          'R': Command_R;
+          'R': begin
+                 Command_R;
+                 if UseDebugger then
+                   Break;
+               end;
           'O': begin
                  Command_O;
+                 Break;
+               end;
+          'B': begin
+                 Command_B;
                  Break;
                end;
           'D': Command_D;

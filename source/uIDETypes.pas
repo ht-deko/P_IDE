@@ -50,6 +50,7 @@ type
     ExePath: string;
     HasEditor: Boolean;
     HasDownloader: Boolean;
+    HasDebugger: Boolean;
     Title1Str: String;
     Title2Str: String;
     VersionStr: String;

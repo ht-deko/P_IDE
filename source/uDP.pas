@@ -35,7 +35,16 @@ begin
   DeleteFile(exefile);
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec('dcc32.exe -CC ' + pasfile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath, True);
+
+  {$IFDEF Win32}
+  var cc := 'dcc32';
+  {$ELSE}
+  var cc := 'dcc64';
+  {$ENDIF}
+  var cl := cc + '.exe -CC ';
+  if UseDebugger then
+    cl := cl + '-V ';
+  Exec(cl + pasfile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath, True);
 end;
 
 // Run
@@ -53,7 +62,10 @@ begin
     end;
   CRT.ClearScreen;
   CRT.EndHighlighting;
-  Exec(exefile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath, True);
+  if UseDebugger then
+    Exec('TD32.EXE -P ' + exefile, IdeRec.ExePath, True)
+  else
+    Exec(exefile + MORECMD_STR[UseMoreCmd], IdeRec.ExePath, True);
 end;
 
 initialization
@@ -63,5 +75,10 @@ initialization
   IdeRec.PlatformStr := 'for Win32';
   IdeRec.DefaultExt  := '.dpr';
   IdeRec.UseMainFile := True;
+  {$IFDEF Win32}
+  IdeRec.HasDebugger := True;
+  {$ELSE}
+  IdeRec.HasDebugger := False;
+  {$ENDIF}
 
 end.
